@@ -1,13 +1,12 @@
-import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
-import { PopularDestinations } from "@/components/popular-destination";
+import PopularDestinations from "@/components/popular-destination";
 import { SearchSection } from "@/components/search-section";
-import { Testimonials } from "@/components/testimonials";
+import TestimonialsSection from "@/components/testimonials";
 import { TourCard } from "@/components/tour-card";
 
 const tours = [
   {
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/tour.jpg",
     title: "California Sunset/Twilight Boat Cruise",
     rating: 5.0,
     reviews: 672,
@@ -17,7 +16,7 @@ const tours = [
     exceptional: true,
   },
   {
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/tour1.jpg",
     title: "NYC: Food Tastings and Culture Tour",
     rating: 4.96,
     reviews: 672,
@@ -26,7 +25,7 @@ const tours = [
     price: 17.32,
   },
   {
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/tour2.jpg",
     title: "Grand Canyon Horseshoe Bend 2 days",
     rating: 4.95,
     reviews: 672,
@@ -39,10 +38,9 @@ const tours = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <SearchSection />
       <HeroSection />
-      <div className="max-w-7xl mx-auto px-4 pb-12">
+      <div className="max-w-7xl mx-auto px-4 pb-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tours.map((tour, index) => (
             <TourCard key={index} {...tour} />
@@ -50,7 +48,7 @@ export default function Home() {
         </div>
       </div>
       <PopularDestinations />
-      <Testimonials />
+      <TestimonialsSection />
     </div>
   );
 }

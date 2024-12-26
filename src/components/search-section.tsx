@@ -70,21 +70,6 @@ export function SearchSection() {
             <SelectItem value="luxury">Luxury</SelectItem>
           </SelectContent>
         </Select>
-        <Select>
-          <SelectTrigger className="w-[140px] bg-gray-50">
-            <SelectValue placeholder="Language" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="en">English</SelectItem>
-            <SelectItem value="es">Spanish</SelectItem>
-            <SelectItem value="fr">French</SelectItem>
-          </SelectContent>
-        </Select>
-        <div className="flex-1 flex justify-end">
-          <Button variant="outline" size="icon">
-            Sort from High to Low
-          </Button>
-        </div>
       </div>
     </div>
   );

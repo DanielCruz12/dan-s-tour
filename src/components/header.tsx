@@ -1,17 +1,12 @@
 import Link from "next/link";
 import { Globe, Menu } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 
 const menuItems = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Tours", href: "/tours" },
-  { label: "Destinations", href: "/destinations" },
-  { label: "Activities", href: "/activities" },
-  { label: "Hotel", href: "/hotel" },
   { label: "Rental", href: "/rental" },
-  { label: "Tickets", href: "/tickets" },
-  { label: "Pages", href: "/pages" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -21,7 +16,7 @@ export function Header() {
     <header className="w-full">
       <div className="bg-yellow-400 dark:bg-yellow-600 text-black dark:text-white py-2 px-4 flex justify-between items-center">
         <p className="text-sm">
-          Unlock the Magic of Travel with Travila - Your Gateway to
+          Unlock the Magic of Travel with Dan&apos;s Tours - Your Gateway to
           Extraordinary Experiences
         </p>
         <Link href="#" className="text-sm hover:underline">
@@ -35,7 +30,7 @@ export function Header() {
               href="/"
               className="text-xl font-bold flex items-center gap-2"
             >
-              🌴 Travila
+              🌴 Dan&apos;s Tours
             </Link>
             <div className="hidden md:flex items-center gap-6">
               {menuItems.map((item) => (
