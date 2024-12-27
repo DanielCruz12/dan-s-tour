@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/hero-section";
+import NewsletterSection from "@/components/newsletter";
 import PopularDestinations from "@/components/popular-destination";
 import { SearchSection } from "@/components/search-section";
 import TestimonialsSection from "@/components/testimonials";
@@ -14,6 +15,8 @@ const tours = [
     groupSize: "Small group",
     price: 35.62,
     exceptional: true,
+    description:
+      "Experience the magic of California as you sail at sunset or under the stars. This 7-day, 6-night small-group boat cruise offers spectacular ocean views, unforgettable sunsets, and serene nature. Perfect for couples or small groups seeking an intimate and relaxing adventure.",
   },
   {
     image: "/tour1.jpg",
@@ -23,6 +26,8 @@ const tours = [
     duration: "3 days 3 nights",
     groupSize: "Company",
     price: 17.32,
+    description:
+      "Explore the flavors and culture of the city that never sleeps. Over 3 days and 3 nights, indulge in local cuisine, discover iconic neighborhoods, and immerse yourself in the vibrant history of New York. Perfect for food lovers and culture enthusiasts.",
   },
   {
     image: "/tour2.jpg",
@@ -32,6 +37,8 @@ const tours = [
     duration: "7 days 6 nights",
     groupSize: "Small group",
     price: 15.63,
+    description:
+      "Discover the grandeur of the Grand Canyon and the iconic Horseshoe Bend in this unforgettable 7-day, 6-night adventure. Join a small group for a personalized experience and explore breathtaking views, natural landscapes, and perfect photo opportunities. Ideal for adventurers and nature lovers.",
   },
 ];
 
@@ -49,6 +56,7 @@ export default function Home() {
       </div>
       <PopularDestinations />
       <TestimonialsSection />
+      <NewsletterSection />
     </div>
   );
 }

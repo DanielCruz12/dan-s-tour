@@ -23,15 +23,15 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Atend John",
     location: "California",
-    image: "https://ui-avatars.com/api/?name=A+J.png",
+    image: "https://picsum.photos/200/300?random=A+J.png",
     rating: 5,
-    text: "I had a last-minute business trip, and the hotel booking system came to the rescue. I was able to find a high-quality hotel in no time and even got a great deal on the room. The confirmation process was straightforward, and I received all the necessary information promptly.",
+    text: "I had a last-minute business trip, and the hotel booking system came to the rescue. I was able to find a high-quality hotel in no time and even got a great deal on the room. The confirmation process was straightforward",
   },
   {
     id: 2,
     name: "Sara Mohan",
     location: "Jakarta",
-    image: "https://ui-avatars.com/api/?name=S+M.png",
+    image: "https://picsum.photos/200/300?random=S+M.png",
     rating: 5,
     text: "I've been using the hotel booking service for several months now, and it's become my go-to platform for all my travels. The interface is user-friendly, providing accurate information and real-time availability.",
   },
@@ -39,15 +39,15 @@ const testimonials: Testimonial[] = [
     id: 3,
     name: "Michael Chen",
     location: "Singapore",
-    image: "https://ui-avatars.com/api/?name=M+C.png",
+    image: "https://picsum.photos/200/300?random=M+C.png",
     rating: 5,
-    text: "The service has been exceptional for several years now. I appreciate the detailed information provided about hotels.",
+    text: "The service has been exceptional for several years now. I appreciate the detailed information provided about hotels. , and I received all the necessary information promptly.",
   },
   {
     id: 4,
     name: "Pepe Chen",
     location: "Singapore",
-    image: "https://ui-avatars.com/api/?name=P+Doe.png",
+    image: "https://picsum.photos/200/300?random=P+Doe.png",
     rating: 5,
     text: "The service has been exceptional for several years now. I appreciate the detailed information provided about hotels.",
   },
@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
                   className="h-6 w-6 rounded-full border-2 border-white overflow-hidden"
                 >
                   <Image
-                    src={`https://ui-avatars.com/api/?name=${i}.png`}
+                    src={`https://picsum.photos/200/300?random=${i}`}
                     alt={`Avatar ${i}`}
                     width={24}
                     height={24}
@@ -123,9 +123,9 @@ export default function TestimonialsSection() {
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
-                        width={48}
-                        height={48}
-                        className="rounded-full"
+                        width={12}
+                        height={12}
+                        className="h-12 w-12 sm:h-11 sm:w-11 rounded-full"
                       />
                       <div>
                         <h3 className="font-semibold">{testimonial.name}</h3>

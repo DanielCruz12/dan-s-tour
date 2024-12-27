@@ -16,8 +16,7 @@ export function Header() {
     <header className="w-full">
       <div className="bg-yellow-400 dark:bg-yellow-600 text-black dark:text-white py-2 px-4 flex justify-between items-center">
         <p className="text-sm">
-          Unlock the Magic of Travel with Dan&apos;s Tours - Your Gateway to
-          Extraordinary Experiences
+          Unlock the Magic of Travel with Dan&apos;s Tours 
         </p>
         <Link href="#" className="text-sm hover:underline">
           Get This Now →

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Packages() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container  max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Our Travel Packages</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {packages.map((pkg) => (
