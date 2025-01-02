@@ -18,7 +18,7 @@ interface TourModalProps {
     title: string;
     rating: number;
     reviews: number;
-    duration: string;
+    duration: string | number;
     groupSize: string;
     price: number;
     exceptional?: boolean;

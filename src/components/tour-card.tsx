@@ -11,7 +11,7 @@ interface TourCardProps {
   title: string;
   rating: number;
   reviews: number;
-  duration: string;
+  duration: string | number;
   groupSize: string;
   price: number;
   exceptional?: boolean;
@@ -73,7 +73,7 @@ export function TourCard({
             </div>
             <h3 className="font-semibold mb-2">{title}</h3>
             <p className="text-gray-600 text-sm mb-4">
-              {duration} - {groupSize}
+              {duration} days - {groupSize}
             </p>
             <div className="flex justify-between items-center">
               <div>
