@@ -1,5 +1,4 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
@@ -11,7 +10,7 @@ export function HeroSection() {
             Your Journey, Your Way
           </h1>
           <p className="text-xl text-gray-600">
-            Discover the Worlds Treasures with Travila
+            Discover the Worlds Treasures with Dans tour
           </p>
         </div>
         <div className="flex gap-2">

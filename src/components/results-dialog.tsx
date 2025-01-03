@@ -23,7 +23,7 @@ export function ResultDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[725px]">
+      <DialogContent className="sm:max-w-[825px]">
         <DialogHeader>
           <DialogTitle>Search Tours</DialogTitle>
           <DialogDescription></DialogDescription>
@@ -40,11 +40,11 @@ export function ResultDialog({
             </div>
           </div>
 
-          <ScrollArea className="h-[300px] w-full rounded-md border p-4">
+          <ScrollArea className="h-[300px] w-full border rounded-md p-4">
             {filteredTours.map((tour, index) => (
               <div
                 key={index}
-                className="mb-4 p-4 border rounded-md flex flex-col sm:flex-row items-start sm:items-center gap-4"
+                className="mb-4 cursor-pointer rounded-md flex flex-col sm:flex-row items-start sm:items-center gap-4"
               >
                 <div className="flex-grow">
                   <h3 className="font-bold">{tour.title}</h3>

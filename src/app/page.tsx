@@ -77,7 +77,6 @@ export default function Home() {
     return true;
   });
 
-  console.log(filteredTours);
   return (
     <div className="min-h-screen bg-background">
       <SearchSection />

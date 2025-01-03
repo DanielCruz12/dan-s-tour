@@ -13,6 +13,7 @@ interface TourCardProps {
   reviews: number;
   duration: string | number;
   groupSize: string;
+  category: string;
   price: number;
   exceptional?: boolean;
   description: string;
@@ -25,6 +26,7 @@ export function TourCard({
   reviews,
   duration,
   groupSize,
+  category,
   price,
   exceptional,
   description,
@@ -34,7 +36,8 @@ export function TourCard({
 
   return (
     <>
-      <motion.div onClick={() => setIsModalOpen(true)}
+      <motion.div
+        onClick={() => setIsModalOpen(true)}
         className="relative aspect-[16/10] rounded-lg cursor-pointer"
         initial={false}
         animate={{ scale: isHovered ? 1.05 : 1, zIndex: isHovered ? 10 : 0 }}
@@ -59,11 +62,9 @@ export function TourCard({
             >
               <Heart className="w-5 h-5" />
             </Button>
-            {exceptional && (
-              <div className="absolute bottom-2 left-2 bg-yellow-400 px-2 py-1 rounded text-sm font-medium">
-                Exceptional
-              </div>
-            )}
+            <div className="absolute bottom-2 left-2 bg-yellow-300 bg-opacity-90  px-2 py-1 rounded text-sm font-medium">
+              {category}
+            </div>
           </div>
           <div className="p-4">
             <div className="flex items-center gap-1 mb-2">
