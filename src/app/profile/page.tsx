@@ -1,29 +1,39 @@
 import { Header } from "@/components/header";
 import { TourCard } from "@/components/tour-card";
+import { Category } from "@/stores/useFilterStorage";
 
 const savedTours = [
   {
-    image: "/tour.jpg",
+    image:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     title: "California Sunset/Twilight Boat Cruise",
     rating: 5.0,
     reviews: 672,
-    duration: "7 days 6 nights",
+    duration: 7,
     groupSize: "Small group",
     price: 35.62,
-    description: "Experience the magic of California as you sail at sunset or under the stars. This 7-day, 6-night small-group boat cruise offers spectacular ocean views, unforgettable sunsets, and serene nature. Perfect for couples or small groups seeking an intimate and relaxing adventure."
+    exceptional: true,
+    description:
+      "Experience the magic of California as you sail at sunset or under the stars. This 7-day, small-group boat cruise offers spectacular ocean views, unforgettable sunsets, and serene nature. Perfect for couples or small groups seeking an intimate and relaxing adventure.",
+    category: Category.TOURS,
   },
   {
-    image: "/tour1.jpg",
-    title: "NYC: Food Tastings and Culture Tour",
-    rating: 4.96,
-    reviews: 672,
-    duration: "3 days 3 nights",
-    groupSize: "Company",
-    price: 17.32,
-    description: "Explore the flavors and culture of the city that never sleeps. Over 3 days and 3 nights, indulge in local cuisine, discover iconic neighborhoods, and immerse yourself in the vibrant history of New York. Perfect for food lovers and culture enthusiasts."
-  }
+    image:
+      "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    video: "https://www.youtube.com/watch?v=O8Dha2vJTqQ",
+    title: "Luxury Stay at Grand Palace Hotel",
+    rating: 4.9,
+    reviews: 850,
+    duration: 3,
+    groupSize: "Couples",
+    price: 400.0,
+    exceptional: true,
+    description:
+      "Enjoy a luxurious stay at the Grand Palace Hotel. This 3-day package includes spa treatments, fine dining, and breathtaking city views. Perfect for couples seeking a romantic getaway.",
+    category: Category.HOTELS,
+  },
 ];
-
 
 export default function ProfilePage() {
   return (

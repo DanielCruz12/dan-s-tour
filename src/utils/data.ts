@@ -76,8 +76,7 @@ const tours = [
     category: Category.DAY_PASS,
   },
   {
-    image:
-      "https://picsum.photos/1000?ramdom=1212.png",
+    image: "https://picsum.photos/1000?ramdom=1212.png",
     video: "https://www.youtube.com/watch?v=3AtDnEC4zak",
     title: "Grand Canyon Helicopter Tour",
     rating: 5.0,
@@ -91,8 +90,7 @@ const tours = [
     category: Category.TOURS,
   },
   {
-    image:
-      "https://picsum.photos/1000?ramdom=1213.png",
+    image: "https://picsum.photos/1000?ramdom=1213.png",
     video: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
     title: "Universal Studios Hollywood Day Pass",
     rating: 4.8,
@@ -106,8 +104,7 @@ const tours = [
     category: Category.TICKETS,
   },
   {
-    image:
-      "https://picsum.photos/1000?ramdom=124.png",
+    image: "https://picsum.photos/1000?ramdom=124.png",
     video: "https://www.youtube.com/watch?v=aJOTlE1K90k",
     title: "Wine Tasting in Napa Valley",
     rating: 4.9,
@@ -122,8 +119,7 @@ const tours = [
   },
   // New Entries
   {
-    image:
-      "https://picsum.photos/1000?ramdom=1215.png",
+    image: "https://picsum.photos/1000?ramdom=1215.png",
     video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     title: "Maui Island Helicopter Tour",
     rating: 5.0,
@@ -137,8 +133,7 @@ const tours = [
     category: Category.TOURS,
   },
   {
-    image:
-      "https://picsum.photos/1000?ramdom=1216.png",
+    image: "https://picsum.photos/1000?ramdom=1216.png",
     video: "https://www.youtube.com/watch?v=lTTajzrSkCw",
     title: "5-Star Ski Resort in Aspen",
     rating: 4.9,
@@ -167,8 +162,7 @@ const tours = [
     category: Category.RENTAL,
   },
   {
-    image:
-      "https://picsum.photos/1000?ramdom=1218.png",
+    image: "https://picsum.photos/1000?ramdom=1218.png",
     video: "https://www.youtube.com/watch?v=O8Dha2vJTqQ",
     title: "Royal Palace Tour in Madrid",
     rating: 4.9,
@@ -226,5 +220,5 @@ const tours = [
       "Experience the glamour of Paris Fashion Week with VIP access. Attend exclusive shows, meet designers, and be part of the fashion elite.",
     category: Category.TICKETS,
   },
-]
-export default tours
+];
+export default tours;
