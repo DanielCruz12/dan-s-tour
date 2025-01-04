@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className=" mt-12 py-8 border-t">
+    <footer className=" mt-6 py-4 border-t">
       <div className="container  max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -16,16 +16,6 @@ export default function Footer() {
               <li>
                 <Link href="#" className="">
                   Safety Information
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="">
-                  Cancellation Options
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="">
-                  Our COVID-19 Response
                 </Link>
               </li>
             </ul>
@@ -43,16 +33,6 @@ export default function Footer() {
                   Careers
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="">
-                  Press
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="">
-                  Policies
-                </Link>
-              </li>
             </ul>
           </div>
           <div>
@@ -66,16 +46,6 @@ export default function Footer() {
               <li>
                 <Link href="#" className="">
                   Paris
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="">
-                  Tokyo
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="">
-                  New Zealand
                 </Link>
               </li>
             </ul>
@@ -93,20 +63,10 @@ export default function Footer() {
                   Affiliates
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="">
-                  Partner with Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="">
-                  Community
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
-        <div className="mt-8 pt-8 text-center">
+        <div className="mt-4 pt-4 text-center">
           <p className="">&copy; 2025 Dan&apos;s Tour. All rights reserved.</p>
         </div>
       </div>

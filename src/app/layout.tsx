@@ -3,6 +3,7 @@ import { Header } from "@/components/header";
 /* import { ThemeProvider } from "@/components/theme-provider"
  */ import "./globals.css";
 import Footer from "@/components/footer";
+import NewsletterSection from "@/components/newsletter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
+        <NewsletterSection />
         <Footer />
       </body>
     </html>

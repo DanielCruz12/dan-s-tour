@@ -14,13 +14,10 @@ const menuItems = [
 export function Header() {
   return (
     <header className="w-full">
-      <div className="bg-yellow-400 dark:bg-yellow-600 text-black dark:text-white py-2 px-4 flex justify-between items-center">
-        <p className="text-sm">
-          Unlock the Magic of Travel with Dan&apos;s Tours 
+      <div className="dark:bg-white bg-black text-white dark:text-white py-2 px-4 flex justify-between items-center">
+        <p className="text-xs lg:text-sm">
+          Unlock the Magic of Travel with Dan&apos;s Tours, Now →
         </p>
-        <Link href="#" className="text-sm hover:underline">
-          Get This Now →
-        </Link>
       </div>
       <nav className="border-b bg-background">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">

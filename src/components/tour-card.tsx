@@ -4,22 +4,25 @@ import { Heart, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { TourModal } from "./tour-modal";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import Link from "next/link";
 
 interface TourCardProps {
+  id: string;
   image: string;
   title: string;
-  rating: number;
   reviews: number;
-  duration: string | number;
+  rating: number;
   groupSize: string;
   category: string;
+  duration: string | number;
   price: number;
   exceptional?: boolean;
   description: string;
 }
 
 export function TourCard({
+  id,
   image,
   title,
   rating,
@@ -28,25 +31,22 @@ export function TourCard({
   groupSize,
   category,
   price,
-  exceptional,
   description,
 }: TourCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <>
+    <Link href={`/tours/${id}`}>
       <motion.div
-        onClick={() => setIsModalOpen(true)}
         className="relative aspect-[16/10] rounded-lg cursor-pointer"
         initial={false}
-        animate={{ scale: isHovered ? 1.05 : 1, zIndex: isHovered ? 10 : 0 }}
+        animate={{ scale: isHovered ? 1.03 : 1, zIndex: isHovered ? 10 : 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
         style={{ transformOrigin: "center center" }}
       >
-        <div className="bg-white rounded-lg overflow-hidden shadow-sm border">
+        <Card className=" overflow-hidden rounded-3xl border-0 bg-white shadow-lg">
           <div className="relative">
             <Image
               src={image}
@@ -55,37 +55,59 @@ export function TourCard({
               height={300}
               className="w-full h-48 object-cover"
             />
-            <Button
-              size="icon"
-              variant="ghost"
-              className="absolute top-2 right-2 text-white hover:text-white"
-            >
-              <Heart className="w-5 h-5" />
-            </Button>
-            <div className="absolute bottom-2 left-2 bg-yellow-300 bg-opacity-90  px-2 py-1 rounded text-sm font-medium">
-              {category}
+            <button className="absolute right-4 top-4 rounded-full p-1 bg-transparent bg-white shadow-sm">
+              <Heart className="h-4 w-4 " />
+            </button>
+            <div className="absolute bottom-[-6px] left-4 flex items-center gap-2 rounded-full bg-white px-3 py-1.5 shadow-lg">
+              <span className="text-muted-foreground">{category}</span>
             </div>
           </div>
-          <div className="p-4">
-            <div className="flex items-center gap-1 mb-2">
-              <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-              <span className="font-medium">{rating}</span>
-              <span className="text-gray-600 text-sm">({reviews} reviews)</span>
+          <CardContent className="pt-6">
+            <div className="flex items-center gap-2">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className={`w-3 h-3 ${
+                    i < Math.floor(rating)
+                      ? "text-yellow-400 fill-yellow-400"
+                      : "text-gray-300"
+                  }`}
+                />
+              ))}
+              <span className="font-normal">{rating}</span>
+              <span className="text-muted-foreground text-sm">
+                ({reviews} reviews)
+              </span>
             </div>
-            <h3 className="font-semibold mb-2">{title}</h3>
-            <p className="text-gray-600 text-sm mb-4">
-              {duration} days - {groupSize}
+            <h3 className="text-xl font-bold">
+              {title.length > 30 ? `${title.slice(0, 30)}...` : title}
+            </h3>
+            <span className="font-normal text-muted-foreground">
+              {description.length > 80
+                ? `${description.slice(0, 80)}..`
+                : description}
+            </span>
+            <p className="text-muted-foreground">
+              {duration} {Number(duration) > 1 ? "days" : "day"}
             </p>
-            <div className="flex justify-between items-center">
-              <div>
-                <span className="font-bold text-lg">${price}</span>
-                <span className="text-gray-600 text-sm"> / person</span>
-              </div>
+          </CardContent>
+          <CardFooter className="flex items-center justify-between pt-0">
+            <div>
+              <span className="text-2xl font-bold">${price}</span>
+              <span className="text-sm text-muted-foreground">
+                / {groupSize}
+              </span>
             </div>
-          </div>
-        </div>
+            <Button
+              className="rounded-full px-6"
+              variant={isHovered ? "default" : "secondary"}
+            >
+              Book Now
+            </Button>
+          </CardFooter>
+        </Card>
       </motion.div>
-      <TourModal
+      {/*  <TourModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         tour={{
@@ -99,7 +121,7 @@ export function TourCard({
           exceptional,
           description,
         }}
-      />
-    </>
+      /> */}
+    </Link>
   );
 }

@@ -2,6 +2,7 @@ import { Category } from "@/stores/useFilterStorage";
 
 const tours = [
   {
+    id: "1",
     image:
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -17,6 +18,7 @@ const tours = [
     category: Category.TOURS,
   },
   {
+    id: " 2",
     image:
       "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     video: "https://www.youtube.com/watch?v=O8Dha2vJTqQ",
@@ -32,6 +34,7 @@ const tours = [
     category: Category.HOTELS,
   },
   {
+    id: "3",
     image:
       "https://images.unsplash.com/photo-1564694202779-bc908c327862?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     video: "https://www.youtube.com/watch?v=lTTajzrSkCw",
@@ -46,8 +49,9 @@ const tours = [
     category: Category.RENTAL,
   },
   {
+    id: "4",
     image:
-      "https://images.unsplash.com/photo-1564694202779-bc908c327862?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     video: "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
     title: "VIP Access to Disneyland California",
     rating: 4.7,
@@ -61,8 +65,9 @@ const tours = [
     category: Category.TICKETS,
   },
   {
+    id: "5",
     image:
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1564694202779-bc908c327862?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     video: "https://www.youtube.com/watch?v=f2JuxM-snGc",
     title: "Beach Club Day Pass in Malibu",
     rating: 4.6,
@@ -76,6 +81,7 @@ const tours = [
     category: Category.DAY_PASS,
   },
   {
+    id: "6",
     image: "https://picsum.photos/1000?ramdom=1212.png",
     video: "https://www.youtube.com/watch?v=3AtDnEC4zak",
     title: "Grand Canyon Helicopter Tour",
@@ -90,6 +96,7 @@ const tours = [
     category: Category.TOURS,
   },
   {
+    id: "7",
     image: "https://picsum.photos/1000?ramdom=1213.png",
     video: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
     title: "Universal Studios Hollywood Day Pass",
@@ -104,6 +111,7 @@ const tours = [
     category: Category.TICKETS,
   },
   {
+    id: "8",
     image: "https://picsum.photos/1000?ramdom=124.png",
     video: "https://www.youtube.com/watch?v=aJOTlE1K90k",
     title: "Wine Tasting in Napa Valley",
@@ -119,6 +127,7 @@ const tours = [
   },
   // New Entries
   {
+    id: "9",
     image: "https://picsum.photos/1000?ramdom=1215.png",
     video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     title: "Maui Island Helicopter Tour",
@@ -133,6 +142,7 @@ const tours = [
     category: Category.TOURS,
   },
   {
+    id: "10",
     image: "https://picsum.photos/1000?ramdom=1216.png",
     video: "https://www.youtube.com/watch?v=lTTajzrSkCw",
     title: "5-Star Ski Resort in Aspen",
@@ -147,6 +157,7 @@ const tours = [
     category: Category.HOTELS,
   },
   {
+    id: "11",
     image:
       "https://images.unsplash.com/photo-1486504701189-e8a60f3a6f34?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-1.2.1&q=80&w=400",
     video: "https://www.youtube.com/watch?v=3AtDnEC4zak",
@@ -162,6 +173,7 @@ const tours = [
     category: Category.RENTAL,
   },
   {
+    id: "12",
     image: "https://picsum.photos/1000?ramdom=1218.png",
     video: "https://www.youtube.com/watch?v=O8Dha2vJTqQ",
     title: "Royal Palace Tour in Madrid",
@@ -176,6 +188,7 @@ const tours = [
     category: Category.TOURS,
   },
   {
+    id: "13",
     image:
       "https://images.unsplash.com/photo-1495390164512-79c9a8a7b0ba?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-1.2.1&q=80&w=400",
     video: "https://www.youtube.com/watch?v=f2JuxM-snGc",
@@ -191,6 +204,7 @@ const tours = [
     category: Category.HOTELS,
   },
   {
+    id: "14",
     image:
       "https://images.unsplash.com/photo-1470719539295-e7b313348a67?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-1.2.1&q=80&w=400",
     video: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
@@ -206,6 +220,7 @@ const tours = [
     category: Category.RENTAL,
   },
   {
+    id: "15",
     image:
       "https://images.unsplash.com/photo-1544162351-0db4ff465b93?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-1.2.1&q=80&w=400",
     video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",

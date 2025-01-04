@@ -1,13 +1,21 @@
 "use client";
+import { useRef } from "react";
 import { HeroSection } from "@/components/hero-section";
-import NewsletterSection from "@/components/newsletter";
 import PopularDestinations from "@/components/popular-destination";
 import { SearchSection } from "@/components/search-section";
 import TestimonialsSection from "@/components/testimonials";
 import { TourCard } from "@/components/tour-card";
 import { useFiltersStore } from "@/stores/useFilterStorage";
 import tours from "@/utils/data";
+import Autoplay from "embla-carousel-autoplay";
 import { prices, ratings, durations } from "@/utils/filters";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Home() {
   const { filters } = useFiltersStore();
@@ -77,20 +85,38 @@ export default function Home() {
     return true;
   });
 
+  const plugin = useRef(Autoplay({ delay: 2200, stopOnInteraction: true }));
+
   return (
     <div className="min-h-screen bg-background">
       <SearchSection />
       <HeroSection />
-      <div className="max-w-7xl mx-auto px-4 pb-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredTours.map((tour, index) => (
-            <TourCard key={index} {...tour} />
-          ))}
-        </div>
-      </div>
+      <section>
+        <Carousel
+          plugins={[plugin.current]}
+          className="w-full max-w-7xl mx-auto"
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+        >
+          <CarouselContent>
+            {filteredTours.map((tour, index) => (
+              <CarouselItem
+                key={index}
+                className="md:basis-1/2 lg:basis-1/3 pl-4"
+              >
+                <div className="p-1">
+                  <TourCard {...tour} />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
+      </section>
+
       <PopularDestinations />
       <TestimonialsSection />
-      <NewsletterSection />
     </div>
   );
 }

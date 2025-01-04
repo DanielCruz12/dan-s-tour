@@ -35,7 +35,7 @@ export function ResultDialog({
               <input
                 type="text"
                 placeholder="What are you looking for?"
-                className="w-full pl-10 pr-4 py-2 rounded-md border bg-gray-50"
+                className="w-full pl-10 pr-4 py-2 rounded-md bg-gray-50 focus:outline-none"
               />
             </div>
           </div>
@@ -44,14 +44,9 @@ export function ResultDialog({
             {filteredTours.map((tour, index) => (
               <div
                 key={index}
-                className="mb-4 cursor-pointer rounded-md flex flex-col sm:flex-row items-start sm:items-center gap-4"
+                className="mb-4 py-2 border-b cursor-pointer rounded-md flex flex-col sm:flex-row items-start sm:items-center gap-4"
               >
                 <div className="flex-grow">
-                  <h3 className="font-bold">{tour.title}</h3>
-                  <p className="text-sm text-gray-600">{tour.duration}</p>
-                  <p className="text-xl font-bold text-primary mt-1">
-                    ${tour.price}
-                  </p>
                   <div className="flex items-center mt-1">
                     {[...Array(5)].map((_, i) => (
                       <Star
@@ -67,6 +62,11 @@ export function ResultDialog({
                       ({tour.reviews} reviews)
                     </span>
                   </div>
+                  <h3 className="font-bold">{tour.title}</h3>
+                 
+                  <p className="text-xl font-bold text-primary mt-1">
+                    ${tour.price} 
+                  </p>
                   <p className="text-sm mt-2 line-clamp-2">
                     {tour.description}
                   </p>

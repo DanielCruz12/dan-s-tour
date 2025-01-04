@@ -1,118 +1,351 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Calendar, MapPin, Users, Clock, Check } from "lucide-react";
+/* eslint-disable @next/next/no-img-element */
+"use client";
 
-export default function PackageDetail({ params }: { params: { id: string } }) {
-  const packageId = parseInt(params.id);
-  const packageDetails = packages.find((pkg) => pkg.id === packageId);
+import { useState } from "react";
+import {
+  CalendarIcon,
+  MapPin,
+  Users,
+  Clock,
+  Calendar,
+  Globe,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Star } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
-  if (!packageDetails) {
-    return <div className="container mx-auto px-4 py-8">Package not found</div>;
-  }
+export default function TourBooking() {
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("12:00");
+  const [addons, setAddons] = useState<string[]>([]);
+  const [tickets, setTickets] = useState({ adult1: 1, adult2: 1 });
+  console.log(selectedTime);
+  const calculateTotal = () => {
+    const ticketPrice = (tickets.adult1 + tickets.adult2) * 42.5;
+    const addonPrice = addons.includes("service1")
+      ? 32.0
+      : 0 + (addons.includes("service2") ? 24.0 : 0);
+    return ticketPrice + addonPrice;
+  };
 
   return (
-    <div className="container  max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">{packageDetails.name}</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="md:col-span-2">
-          <div className="relative aspect-video rounded-lg overflow-hidden mb-8">
-            <Image
-              src={packageDetails.image}
-              alt={packageDetails.name}
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 className="text-2xl font-semibold mb-4">About this package</h2>
-            <p className="text-gray-600 mb-4">{packageDetails.description}</p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center">
-                <Calendar className="text-primary mr-2" />
-                <span>{packageDetails.duration}</span>
+    <div className="max-w-7xl mx-auto p-4 md:p-6">
+      <div className="grid lg:grid-cols-3 gap-6">
+        {/* Tour Details Section */}
+        <div className="lg:col-span-2 space-y-6">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+              <span className="font-medium">4.96</span>
+              <span className="text-muted-foreground">(672 reviews)</span>
+            </div>
+
+            <h1 className="text-xl md:text-3xl font-bold mb-4">
+              The High Roller Experience: Tickets for The LINQ Observation
+              Wheel, Las Vegas Strip
+            </h1>
+
+            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+              <div className="flex items-center gap-1">
+                <MapPin className="w-4 h-4" />
+                <span>Las Vegas, USA</span>
               </div>
-              <div className="flex items-center">
-                <MapPin className="text-primary mr-2" />
-                <span>{packageDetails.destination}</span>
+
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <button className="underline font-semibold">
+                    <a
+                      href="https://www.google.com/maps/place/Miami+Beach,+Florida,+EE.+UU./@25.8103728,-80.2225436,23885m/data=!3m2!1e3!4b1!4m6!3m5!1s0x88d9a6172bfeddb9:0x37be1741259463eb!8m2!3d25.790654!4d-80.1300455!16zL20vMHJubXk?hl=es-419&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Show on map
+                    </a>
+                  </button>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-80">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104012.48017173659!2d-80.1401415!3d25.8102415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a6172bfeddb9%3A0x37be1741259463eb!2sMiami%20Beach%2C%20Florida%2C%20EE.%20UU.!5e1!3m2!1ses-419!2ssv!4v1736029852703!5m2!1ses-419!2ssv"
+                    width="400"
+                    height="250"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    loading="lazy"
+                  ></iframe>
+                </HoverCardContent>
+              </HoverCard>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-lg shadow">
+              <div className="flex items-center gap-2  rounded-lg">
+                <div className="bg-cyan-50 p-4">
+                  <Calendar className="w-5 h-5 text-primary rounded-xl" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium">Duration</div>
+                  <div className="text-sm text-muted-foreground">5-7 days</div>
+                </div>
               </div>
-              <div className="flex items-center">
-                <Users className="text-primary mr-2" />
-                <span>Max {packageDetails.groupSize} people</span>
+              <div className="flex items-center gap-2 ">
+                <div className="p-4 bg-rose-50 rounded-xl">
+                  <Users className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium">Group Size</div>
+                  <div className="text-sm text-muted-foreground">06 people</div>
+                </div>
               </div>
-              <div className="flex items-center">
-                <Clock className="text-primary mr-2" />
-                <span>{packageDetails.startTime} start time</span>
+              <div className="flex items-center gap-2 ">
+                <div className="p-4 bg-purple-50 rounded-xl">
+                  <Clock className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium">Tour Type</div>
+                  <div className="text-sm text-muted-foreground">
+                    Daily Tour
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="p-4  bg-blue-50 rounded-xl">
+                  <Globe className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium">Languages</div>
+                  <div className="text-sm text-muted-foreground">English</div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Itinerary</h2>
-            <ul className="space-y-4">
-              {packageDetails.itinerary.map((item, index) => (
-                <li key={index} className="flex">
-                  <span className="font-semibold mr-2">{`Day ${index + 1}:`}</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+
+          <Accordion
+            type="multiple"
+            defaultValue={["overview", "highlight"]}
+            className="space-y-4"
+          >
+            <AccordionItem value="overview">
+              <AccordionTrigger className="text-xl font-semibold">
+                Overview
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="space-y-4 text-muted-foreground">
+                  <p>
+                    Elevate your Las Vegas experience to new heights with a
+                    journey aboard The High Roller at The LINQ. As the tallest
+                    observation wheel in the world, standing at an impressive
+                    550 feet tall, The High Roller offers a birds-eye
+                    perspective of the iconic Las Vegas Strip and its
+                    surrounding desert landscape. From the moment you step into
+                    one of the spacious cabins, youll be transported on a
+                    mesmerizing adventure, where every turn offers a new and
+                    breathtaking vista of the vibrant city below.
+                  </p>
+                  <p>
+                    Whether youre a first-time visitor or a seasoned Las Vegas
+                    aficionado, The High Roller promises an unparalleled
+                    experience that will leave you in awe. With its
+                    climate-controlled cabins and immersive audio commentary,
+                    this attraction provides a unique opportunity to see Las
+                    Vegas from a whole new perspective, while learning about its
+                    rich history and famous landmarks along the way.
+                  </p>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="highlight">
+              <AccordionTrigger className="text-xl font-semibold">
+                Highlight
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="space-y-4 text-muted-foreground">
+                  <p>
+                    Ascend to the skies aboard the worlds tallest observation
+                    wheel and marvel at the panoramic vistas stretching as far
+                    as the eye can see. From the iconic landmarks of the Strip
+                    to the majestic mountains in the distance, every moment
+                    aboard The High Roller promises breathtaking sights and
+                    unforgettable memories.
+                  </p>
+                  <p>
+                    All rooms at the resort come with air conditioning, a
+                    seating area, a flat-screen TV with satellite channels, a
+                    safety deposit box and a private bathroom with a shower,
+                    free toiletries and a hairdryer. At Pickalbatros Water
+                    Valley Resort - Neverland Hurghada rooms are equipped with
+                    bed linen and towels.
+                  </p>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
-        <div>
-          <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
-            <h2 className="text-2xl font-semibold mb-4">Price Details</h2>
-            <p className="text-3xl font-bold text-primary mb-4">
-              {packageDetails.price}
-            </p>
-            <ul className="space-y-2 mb-6">
-              {packageDetails.included.map((item, index) => (
-                <li key={index} className="flex items-center">
-                  <Check className="text-green-500 mr-2" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/payment"
-              className="block w-full bg-primary text-white text-center py-3 rounded-lg hover:bg-primary-dark transition-colors"
-            >
-              Book Now
-            </Link>
-          </div>
-        </div>
+
+        {/* Booking Form */}
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-4">Booking Form</h2>
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <Label>From:</Label>
+                <div className="flex items-center gap-2 border rounded-md p-2">
+                  <CalendarIcon className="w-4 h-4 text-muted-foreground" />
+                  <input
+                    type="date"
+                    value={selectedDate}
+                    onChange={(e) => setSelectedDate(e.target.value)}
+                    className="outline-none bg-transparent flex-1"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label>Time:</Label>
+              <RadioGroup defaultValue="12:00" onValueChange={setSelectedTime}>
+                <div className="flex gap-4">
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="12:00" id="12:00" />
+                    <Label htmlFor="12:00">12:00</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="17:00" id="17:00" />
+                    <Label htmlFor="17:00">17:00</Label>
+                  </div>
+                </div>
+              </RadioGroup>
+            </div>
+
+            <div className="space-y-4">
+              <Label>Tickets:</Label>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span>Adult (18+ years)</span>
+                  <div className="flex items-center gap-2">
+                    <span>$42.50</span>
+                    <Select
+                      value={tickets.adult1.toString()}
+                      onValueChange={(value) =>
+                        setTickets({ ...tickets, adult1: parseInt(value) })
+                      }
+                    >
+                      <SelectTrigger className="w-20">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {[1, 2, 3, 4, 5].map((num) => (
+                          <SelectItem key={num} value={num.toString()}>
+                            {num}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Adult (18+ years)</span>
+                  <div className="flex items-center gap-2">
+                    <span>$42.50</span>
+                    <Select
+                      value={tickets.adult2.toString()}
+                      onValueChange={(value) =>
+                        setTickets({ ...tickets, adult2: parseInt(value) })
+                      }
+                    >
+                      <SelectTrigger className="w-20">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {[1, 2, 3, 4, 5].map((num) => (
+                          <SelectItem key={num} value={num.toString()}>
+                            {num}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <Label>Add Extra:</Label>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Checkbox
+                      checked={addons.includes("service1")}
+                      onCheckedChange={(checked) => {
+                        if (checked) {
+                          setAddons([...addons, "service1"]);
+                        } else {
+                          setAddons(addons.filter((a) => a !== "service1"));
+                        }
+                      }}
+                    />
+                    <span>Add service per Booking</span>
+                  </div>
+                  <span>$32.00</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Checkbox
+                      checked={addons.includes("service2")}
+                      onCheckedChange={(checked) => {
+                        if (checked) {
+                          setAddons([...addons, "service2"]);
+                        } else {
+                          setAddons(addons.filter((a) => a !== "service2"));
+                        }
+                      }}
+                    />
+                    <span>Add service per Personal</span>
+                  </div>
+                  <span>$24.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t">
+              <div className="flex items-center justify-between mb-4">
+                <span className="font-semibold">Total:</span>
+                <span className="font-semibold">
+                  ${calculateTotal().toFixed(2)}
+                </span>
+              </div>
+              <Button className="w-full bg-black text-white hover:bg-gray-800">
+                Book Now
+              </Button>
+            </div>
+            <div className="mt-6 text-center">
+              <button className="text-sm text-muted-foreground hover:text-foreground flex items-center justify-center gap-2 mx-auto">
+                <Users className="w-4 h-4" />
+                Need some help?
+              </button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
 }
-
-const packages = [
-  {
-    id: 1,
-    name: "Tropical Paradise Getaway",
-    description:
-      "Experience the beauty of pristine beaches and lush forests in this 7-day tropical adventure. Relax on white sandy beaches, explore vibrant coral reefs, and immerse yourself in the local culture.",
-    image: "/placeholder.svg?height=400&width=600",
-    price: "From $1,299",
-    duration: "7 days",
-    destination: "Bali, Indonesia",
-    groupSize: 12,
-    startTime: "9:00 AM",
-    itinerary: [
-      "Arrival and welcome dinner",
-      "Beach relaxation and snorkeling",
-      "Rainforest hike and waterfall visit",
-      "Local village tour and cooking class",
-      "Island hopping boat trip",
-      "Free day for optional activities",
-      "Departure",
-    ],
-    included: [
-      "Round-trip flights",
-      "Accommodation in 4-star resorts",
-      "Daily breakfast and select meals",
-      "All activities and entrance fees",
-      "English-speaking guide",
-      "Airport transfers",
-    ],
-  },
-  // ... (other package details)
-];

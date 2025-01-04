@@ -8,7 +8,7 @@ export enum Category {
   DAY_PASS = "Day pass",
 }
 
-type FilterOptions = {
+export type FilterOptions = {
   category: Category | null;
   duration: number | null; // Adjusted to number
   rating: number | null; // Adjusted to number

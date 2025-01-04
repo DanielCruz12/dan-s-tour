@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
-import { Info, Star } from "lucide-react";
-
+import { Star } from "lucide-react";
+/* import { Info, Star } from "lucide-react";
+ */
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -9,7 +10,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import Link from "next/link";
 
 interface TourModalProps {
   isOpen: boolean;
@@ -62,15 +62,15 @@ export function TourModal({ isOpen, onClose, tour }: TourModalProps) {
                 <span className="font-bold text-lg">${tour.price}</span>
                 <span className="text-gray-600 text-sm"> / person</span>
               </div>
-              {/*  <a href="https://pay.tiankii.com/m/dandubua/2fdc645d-bd76-4e25-b375-728bd747cbac" target="_blank" rel="noopener noreferrer">
+               <a href="https://pay.tiankii.com/m/dandubua/2fdc645d-bd76-4e25-b375-728bd747cbac" target="_blank" rel="noopener noreferrer">
                 <Button>Book Now</Button>
-              </a> */}
-              <Link href={""}>
+              </a> 
+              {/* <Link href={""}>
                 <Button>
                   <Info className="w-4 h-4" />
                   See information
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

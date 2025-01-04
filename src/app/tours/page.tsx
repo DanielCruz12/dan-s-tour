@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
+//! MOSTRAR TODOS LOS TOURS
 export default function Packages() {
   return (
     <div className="container  max-w-7xl mx-auto px-4 py-8">
