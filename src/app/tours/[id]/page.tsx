@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   CalendarIcon,
   MapPin,
@@ -11,7 +11,6 @@ import {
   Globe,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -30,17 +29,21 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function TourBooking() {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("12:00");
+  console.log(selectedTime);
   const [addons, setAddons] = useState<string[]>([]);
   const [tickets, setTickets] = useState({ adult1: 1, adult2: 1 });
-  console.log(selectedTime);
+  const plugin = useRef(Autoplay({ delay: 2200, stopOnInteraction: true }));
   const calculateTotal = () => {
     const ticketPrice = (tickets.adult1 + tickets.adult2) * 42.5;
     const addonPrice = addons.includes("service1")
@@ -53,7 +56,7 @@ export default function TourBooking() {
     <div className="max-w-7xl mx-auto p-4 md:p-6">
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Tour Details Section */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-6 pr-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
@@ -71,55 +74,35 @@ export default function TourBooking() {
                 <MapPin className="w-4 h-4" />
                 <span>Las Vegas, USA</span>
               </div>
-
-              <HoverCard>
-                <HoverCardTrigger asChild>
-                  <button className="underline font-semibold">
-                    <a
-                      href="https://www.google.com/maps/place/Miami+Beach,+Florida,+EE.+UU./@25.8103728,-80.2225436,23885m/data=!3m2!1e3!4b1!4m6!3m5!1s0x88d9a6172bfeddb9:0x37be1741259463eb!8m2!3d25.790654!4d-80.1300455!16zL20vMHJubXk?hl=es-419&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Show on map
-                    </a>
-                  </button>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-80">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104012.48017173659!2d-80.1401415!3d25.8102415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a6172bfeddb9%3A0x37be1741259463eb!2sMiami%20Beach%2C%20Florida%2C%20EE.%20UU.!5e1!3m2!1ses-419!2ssv!4v1736029852703!5m2!1ses-419!2ssv"
-                    width="400"
-                    height="250"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    loading="lazy"
-                  ></iframe>
-                </HoverCardContent>
-              </HoverCard>
+              <button className="underline font-semibold">
+                <a
+                  href="https://www.google.com/maps/place/Miami+Beach,+Florida,+EE.+UU./@25.8103728,-80.2225436,23885m/data=!3m2!1e3!4b1!4m6!3m5!1s0x88d9a6172bfeddb9:0x37be1741259463eb!8m2!3d25.790654!4d-80.1300455!16zL20vMHJubXk?hl=es-419&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Show on map
+                </a>
+              </button>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-lg shadow">
               <div className="flex items-center gap-2  rounded-lg">
-                <div className="bg-cyan-50 p-4">
-                  <Calendar className="w-5 h-5 text-primary rounded-xl" />
-                </div>
+                <Calendar className="w-5 h-5 text-primary rounded-xl" />
                 <div>
                   <div className="text-sm font-medium">Duration</div>
                   <div className="text-sm text-muted-foreground">5-7 days</div>
                 </div>
               </div>
+
               <div className="flex items-center gap-2 ">
-                <div className="p-4 bg-rose-50 rounded-xl">
-                  <Users className="w-5 h-5 text-primary" />
-                </div>
+                <Users className="w-5 h-5 text-primary" />
                 <div>
                   <div className="text-sm font-medium">Group Size</div>
                   <div className="text-sm text-muted-foreground">06 people</div>
                 </div>
               </div>
               <div className="flex items-center gap-2 ">
-                <div className="p-4 bg-purple-50 rounded-xl">
-                  <Clock className="w-5 h-5 text-primary" />
-                </div>
+                <Clock className="w-5 h-5 text-primary" />
                 <div>
                   <div className="text-sm font-medium">Tour Type</div>
                   <div className="text-sm text-muted-foreground">
@@ -128,9 +111,7 @@ export default function TourBooking() {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <div className="p-4  bg-blue-50 rounded-xl">
-                  <Globe className="w-5 h-5 text-primary" />
-                </div>
+                <Globe className="w-5 h-5 text-primary" />
                 <div>
                   <div className="text-sm font-medium">Languages</div>
                   <div className="text-sm text-muted-foreground">English</div>
@@ -202,8 +183,37 @@ export default function TourBooking() {
         </div>
 
         {/* Booking Form */}
-        <Card>
-          <CardContent className="p-6">
+        <div className="px-3">
+          <div>
+            <Carousel plugins={[plugin.current]} className=" mx-auto">
+              <CarouselContent>
+                <CarouselItem>
+                  <img
+                    src="/tour.jpg"
+                    alt="Tour Image 1"
+                    className="rounded-lg"
+                  />
+                </CarouselItem>
+                <CarouselItem>
+                  <img
+                    src="/tour1.jpg"
+                    alt="Tour Image 2"
+                    className="rounded-lg"
+                  />
+                </CarouselItem>
+                <CarouselItem>
+                  <img
+                    src="/tour2.jpg"
+                    alt="Tour Image 3"
+                    className="rounded-lg"
+                  />
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
+          </div>
+          <div className="pt-3">
             <h2 className="text-xl font-semibold mb-4">Booking Form</h2>
             <div className="space-y-6">
               <div className="space-y-2">
@@ -343,8 +353,8 @@ export default function TourBooking() {
                 Need some help?
               </button>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

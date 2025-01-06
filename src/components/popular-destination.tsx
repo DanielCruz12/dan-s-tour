@@ -176,7 +176,7 @@ export default function PopularDestinations() {
           {filteredDestinations.map((destination) => (
             <div
               key={destination.id}
-              className="rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-shadow"
+              className="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
               <div className="relative h-48">
                 <Image

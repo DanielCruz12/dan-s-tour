@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Heart, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -46,7 +46,7 @@ export function TourCard({
         onHoverEnd={() => setIsHovered(false)}
         style={{ transformOrigin: "center center" }}
       >
-        <Card className=" overflow-hidden rounded-3xl border-0 bg-white shadow-lg">
+        <Card className=" overflow-hidden rounded-3xl border-0 shadow-lg">
           <div className="relative">
             <Image
               src={image}
@@ -55,11 +55,11 @@ export function TourCard({
               height={300}
               className="w-full h-48 object-cover"
             />
-            <button className="absolute right-4 top-4 rounded-full p-1 bg-transparent bg-white shadow-sm">
+           {/*  <button className="absolute right-4 top-4 rounded-full p-1 bg-transparent shadow-sm">
               <Heart className="h-4 w-4 " />
-            </button>
-            <div className="absolute bottom-[-6px] left-4 flex items-center gap-2 rounded-full bg-white px-3 py-1.5 shadow-lg">
-              <span className="text-muted-foreground">{category}</span>
+            </button> */}
+            <div className="absolute bottom-[-6px] left-4 flex items-center gap-2 rounded-full px-3 py-1.5 shadow-lg bg-white dark:bg-gray-200">
+              <span className="text-muted-foreground dark:text-gray-700">{category}</span>
             </div>
           </div>
           <CardContent className="pt-6">

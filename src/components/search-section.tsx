@@ -28,7 +28,7 @@ export function SearchSection() {
             onFocus={() => setIsDialogOpen(true)}
             type="text"
             placeholder="What are you looking for?"
-            className="w-full pl-10 pr-4 py-2 rounded-md border bg-gray-50"
+            className="w-full pl-10 pr-4 py-2 rounded-md border "
           />
         </div>
         <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
@@ -53,7 +53,7 @@ export function SearchSection() {
             key={field}
             onValueChange={(value) => setFilters({ [field]: value })}
           >
-            <SelectTrigger className="w-[140px] bg-gray-50">
+            <SelectTrigger className="w-[140px] ">
               <SelectValue
                 placeholder={filters[field as keyof typeof filters] || label}
               />

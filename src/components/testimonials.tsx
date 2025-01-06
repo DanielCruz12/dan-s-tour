@@ -56,10 +56,10 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-blue-50 px-4 py-16 md:px-6 lg:px-8">
+    <section className=" px-4 py-16 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
-          <div className="inline-flex items-center gap-1 bg-white rounded-full px-4 py-2 mb-6">
+          <div className="inline-flex items-center gap-1 dark:bg-gray-800 rounded-full px-4 py-2 mb-6">
             <div className="flex -space-x-2">
               {[1, 2, 3].map((i) => (
                 <div
@@ -83,14 +83,14 @@ export default function TestimonialsSection() {
             What our clients are saying about us?
           </h2>
 
-          <p className="text-gray-600 max-w-2xl">
+          <p className="dark:text-gray-500 max-w-2xl">
             Discover how you can offset your adventures carbon emissions and
             support the sustainable initiatives practiced by our operators
             worldwide.
           </p>
         </div>
 
-        <div className="relative">
+        <div className="">
           <Carousel
             opts={{
               align: "start",
@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
                   key={testimonial.id}
                   className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
                 >
-                  <div className="bg-white p-6 rounded-2xl h-full">
+                  <div className="p-6 rounded-2xl h-full">
                     <div className="flex items-center gap-2 mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <svg
@@ -117,7 +117,7 @@ export default function TestimonialsSection() {
                       ))}
                     </div>
 
-                    <p className="text-gray-600 mb-6">{testimonial.text}</p>
+                    <p className="dark:text-gray-200 mb-6">{testimonial.text}</p>
 
                     <div className="flex items-center gap-3">
                       <Image

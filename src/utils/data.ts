@@ -3,8 +3,7 @@ import { Category } from "@/stores/useFilterStorage";
 const tours = [
   {
     id: "1",
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    image: "/tour.jpg",
     video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     title: "California Sunset/Twilight Boat Cruise",
     rating: 5.0,
@@ -82,7 +81,7 @@ const tours = [
   },
   {
     id: "6",
-    image: "https://picsum.photos/1000?ramdom=1212.png",
+    image: "/tour1.jpg",
     video: "https://www.youtube.com/watch?v=3AtDnEC4zak",
     title: "Grand Canyon Helicopter Tour",
     rating: 5.0,
@@ -112,7 +111,7 @@ const tours = [
   },
   {
     id: "8",
-    image: "https://picsum.photos/1000?ramdom=124.png",
+    image: "/tour2.jpg",
     video: "https://www.youtube.com/watch?v=aJOTlE1K90k",
     title: "Wine Tasting in Napa Valley",
     rating: 4.9,

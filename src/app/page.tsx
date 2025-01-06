@@ -16,6 +16,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import NewsletterSection from "@/components/newsletter";
+import { NoSearchResults } from "@/components/not-results-found";
 
 export default function Home() {
   const { filters } = useFiltersStore();
@@ -86,37 +88,41 @@ export default function Home() {
   });
 
   const plugin = useRef(Autoplay({ delay: 2200, stopOnInteraction: true }));
-
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <SearchSection />
       <HeroSection />
-      <section>
-        <Carousel
-          plugins={[plugin.current]}
-          className="w-full max-w-7xl mx-auto"
-          onMouseEnter={plugin.current.stop}
-          onMouseLeave={plugin.current.reset}
-        >
-          <CarouselContent>
-            {filteredTours.map((tour, index) => (
-              <CarouselItem
-                key={index}
-                className="md:basis-1/2 lg:basis-1/3 pl-4"
-              >
-                <div className="p-1">
-                  <TourCard {...tour} />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
-        </Carousel>
-      </section>
+      {filteredTours.length > 0 ? (
+        <section>
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full max-w-7xl mx-auto"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          >
+            <CarouselContent>
+              {filteredTours.map((tour, index) => (
+                <CarouselItem
+                  key={index}
+                  className="md:basis-1/2 lg:basis-1/3 pl-4"
+                >
+                  <div className="p-1">
+                    <TourCard {...tour} />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+        </section>
+      ) : (
+        <NoSearchResults />
+      )}
 
       <PopularDestinations />
       <TestimonialsSection />
+      <NewsletterSection />
     </div>
   );
 }

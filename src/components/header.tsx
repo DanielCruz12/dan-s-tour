@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Globe, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "./mode-toggle";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -14,19 +15,19 @@ const menuItems = [
 export function Header() {
   return (
     <header className="w-full">
-      <div className="dark:bg-white bg-black text-white dark:text-white py-2 px-4 flex justify-between items-center">
+      <div className=" py-2 px-4 flex justify-center items-center">
         <p className="text-xs lg:text-sm">
           Unlock the Magic of Travel with Dan&apos;s Tours, Now →
         </p>
       </div>
-      <nav className="border-b bg-background">
+      <nav className="border-b">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
           <div className="flex items-center gap-8">
             <Link
               href="/"
               className="text-xl font-bold flex items-center gap-2"
             >
-              🌴 Dan&apos;s Tours
+             Dan&apos;s Tours
             </Link>
             <div className="hidden md:flex items-center gap-6">
               {menuItems.map((item) => (
@@ -48,7 +49,7 @@ export function Header() {
             <div className="flex items-center gap-2">
               <span className="text-sm">USD</span>
             </div>
-            {/* <ThemeToggle /> */}
+            <ModeToggle />
             <Button variant="outline" size="sm">
               Sign in
             </Button>

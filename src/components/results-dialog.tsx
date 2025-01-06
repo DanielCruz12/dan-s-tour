@@ -25,7 +25,7 @@ export function ResultDialog({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[825px]">
         <DialogHeader>
-          <DialogTitle>Search Tours</DialogTitle>
+          <DialogTitle>Discover the Worlds Treasures</DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
@@ -35,7 +35,7 @@ export function ResultDialog({
               <input
                 type="text"
                 placeholder="What are you looking for?"
-                className="w-full pl-10 pr-4 py-2 rounded-md bg-gray-50 focus:outline-none"
+                className="w-full pl-10 pr-4 py-2 rounded-md  focus:outline-none"
               />
             </div>
           </div>
@@ -63,9 +63,9 @@ export function ResultDialog({
                     </span>
                   </div>
                   <h3 className="font-bold">{tour.title}</h3>
-                 
+
                   <p className="text-xl font-bold text-primary mt-1">
-                    ${tour.price} 
+                    ${tour.price}
                   </p>
                   <p className="text-sm mt-2 line-clamp-2">
                     {tour.description}
