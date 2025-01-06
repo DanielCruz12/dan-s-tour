@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Globe, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "./mode-toggle";
+import { ModeToggle } from "@/components/mode-toggle";
+import { SheetSide } from "./sidebar";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -20,14 +20,14 @@ export function Header() {
           Unlock the Magic of Travel with Dan&apos;s Tours, Now →
         </p>
       </div>
-      <nav className="border-b">
+      <nav>
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
           <div className="flex items-center gap-8">
             <Link
               href="/"
               className="text-xl font-bold flex items-center gap-2"
             >
-             Dan&apos;s Tours
+              Dan&apos;s Tours
             </Link>
             <div className="hidden md:flex items-center gap-6">
               {menuItems.map((item) => (
@@ -42,10 +42,10 @@ export function Header() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
+           {/*  <div className="flex items-center gap-2">
               <Globe className="w-4 h-4" />
               <span className="text-sm">EN</span>
-            </div>
+            </div> */}
             <div className="flex items-center gap-2">
               <span className="text-sm">USD</span>
             </div>
@@ -53,9 +53,8 @@ export function Header() {
             <Button variant="outline" size="sm">
               Sign in
             </Button>
-            <Button size="icon" variant="ghost">
-              <Menu className="w-5 h-5" />
-            </Button>
+
+            <SheetSide />
           </div>
         </div>
       </nav>

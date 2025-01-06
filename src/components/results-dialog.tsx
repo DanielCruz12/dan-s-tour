@@ -23,10 +23,12 @@ export function ResultDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[825px]">
+      <DialogContent className="max-w-[90%] md:max-w-[85%] lg:max-w-[75%] xl:max-w-[55%] mx-auto rounded-lg">
         <DialogHeader>
           <DialogTitle>Discover the Worlds Treasures</DialogTitle>
-          <DialogDescription></DialogDescription>
+          <DialogDescription>
+            Explore your travel dreams and make them a reality
+          </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="flex items-center gap-4">
@@ -35,12 +37,12 @@ export function ResultDialog({
               <input
                 type="text"
                 placeholder="What are you looking for?"
-                className="w-full pl-10 pr-4 py-2 rounded-md  focus:outline-none"
+                className="w-full pl-10 pr-4 py-2 rounded-md focus:outline-none"
               />
             </div>
           </div>
 
-          <ScrollArea className="h-[300px] w-full border rounded-md p-4">
+          <ScrollArea className="h-[300px] w-full rounded-md">
             {filteredTours.map((tour, index) => (
               <div
                 key={index}
@@ -62,7 +64,7 @@ export function ResultDialog({
                       ({tour.reviews} reviews)
                     </span>
                   </div>
-                  <h3 className="font-bold">{tour.title}</h3>
+                  <h3 className="font-bold text-lg">{tour.title}</h3>
 
                   <p className="text-xl font-bold text-primary mt-1">
                     ${tour.price}
@@ -77,6 +79,7 @@ export function ResultDialog({
                     alt={tour.title}
                     fill
                     style={{ objectFit: "cover" }}
+                    className="image"
                   />
                 </div>
               </div>

@@ -1,4 +1,3 @@
-import { Header } from "@/components/header";
 import { TourCard } from "@/components/tour-card";
 import { Category } from "@/stores/useFilterStorage";
 
@@ -40,7 +39,6 @@ const savedTours = [
 export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid gap-8">
           <div>
