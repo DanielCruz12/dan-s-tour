@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
-import { SheetSide } from "./sidebar";
+import { MenuProfileSheet } from "./sidebar";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -54,7 +54,7 @@ export function Header() {
               Sign in
             </Button>
 
-            <SheetSide />
+            <MenuProfileSheet />
           </div>
         </div>
       </nav>

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import {
   CalendarIcon,
   MapPin,
@@ -28,14 +28,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+
+import ImageCollage from "@/components/image-collage";
 
 export default function TourBooking() {
   const [selectedDate, setSelectedDate] = useState("");
@@ -43,7 +37,6 @@ export default function TourBooking() {
   console.log(selectedTime);
   const [addons, setAddons] = useState<string[]>([]);
   const [tickets, setTickets] = useState({ adult1: 1, adult2: 1 });
-  const plugin = useRef(Autoplay({ delay: 2200, stopOnInteraction: true }));
   const calculateTotal = () => {
     const ticketPrice = (tickets.adult1 + tickets.adult2) * 42.5;
     const addonPrice = addons.includes("service1")
@@ -54,21 +47,20 @@ export default function TourBooking() {
 
   return (
     <div className="max-w-7xl mx-auto p-4 md:p-6">
+      <div className="flex items-center gap-2 mb-2">
+        <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+        <span className="font-medium">4.96</span>
+        <span className="text-muted-foreground">(672 reviews)</span>
+      </div>
+      <h1 className="text-xl md:text-3xl font-bold">
+        The High Roller Experience: Tickets for The LINQ Observation Wheel, Las
+        Vegas Strip
+      </h1>
+      <ImageCollage />
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Tour Details Section */}
         <div className="lg:col-span-2 space-y-6 pr-6">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-              <span className="font-medium">4.96</span>
-              <span className="text-muted-foreground">(672 reviews)</span>
-            </div>
-
-            <h1 className="text-xl md:text-3xl font-bold mb-4">
-              The High Roller Experience: Tickets for The LINQ Observation
-              Wheel, Las Vegas Strip
-            </h1>
-
             <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
               <div className="flex items-center gap-1">
                 <MapPin className="w-4 h-4" />
@@ -184,35 +176,6 @@ export default function TourBooking() {
 
         {/* Booking Form */}
         <div className="px-3">
-          <div>
-            <Carousel plugins={[plugin.current]} className=" mx-auto">
-              <CarouselContent>
-                <CarouselItem>
-                  <img
-                    src="/tour.jpg"
-                    alt="Tour Image 1"
-                    className="rounded-lg"
-                  />
-                </CarouselItem>
-                <CarouselItem>
-                  <img
-                    src="/tour1.jpg"
-                    alt="Tour Image 2"
-                    className="rounded-lg"
-                  />
-                </CarouselItem>
-                <CarouselItem>
-                  <img
-                    src="/tour2.jpg"
-                    alt="Tour Image 3"
-                    className="rounded-lg"
-                  />
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious className="hidden md:flex" />
-              <CarouselNext className="hidden md:flex" />
-            </Carousel>
-          </div>
           <div className="pt-3">
             <h2 className="text-xl font-semibold mb-4">Booking Form</h2>
             <div className="space-y-6">
