@@ -7,23 +7,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 
 export default function HelpAndSupportPage() {
   const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Aquí iría la lógica para manejar el envío del formulario
-    /*  toast({
-      title: "Mensaje enviado",
-      description:
-        "Hemos recibido tu mensaje. Te responderemos lo antes posible.",
-    }); */
-  };
 
   const faqs = [
     {
@@ -49,9 +36,9 @@ export default function HelpAndSupportPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto py-8">
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Preguntas Frecuentes</h2>
+    <div className="max-w-7xl min-h-screen mx-auto px-4">
+      <div className="pt-5">
+        <h2 className="text-xl font-semibold mb-4">Preguntas Frecuentes</h2>
         <Input
           type="search"
           placeholder="Buscar en las FAQ..."
@@ -59,7 +46,11 @@ export default function HelpAndSupportPage() {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="mb-4"
         />
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion
+          type="multiple"
+          defaultValue={["item-0", "item-1"]}
+          className="w-full"
+        >
           {faqs
             .filter(
               (faq) =>
@@ -73,29 +64,6 @@ export default function HelpAndSupportPage() {
               </AccordionItem>
             ))}
         </Accordion>
-      </div>
-
-      <div>
-        <h2 className="text-2xl font-semibold mb-4">Contáctanos</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <Label htmlFor="name">Nombre</Label>
-            <Input id="name" required />
-          </div>
-          <div>
-            <Label htmlFor="email">Correo electrónico</Label>
-            <Input id="email" type="email" required />
-          </div>
-          <div>
-            <Label htmlFor="subject">Asunto</Label>
-            <Input id="subject" required />
-          </div>
-          <div>
-            <Label htmlFor="message">Mensaje</Label>
-            <Textarea id="message" required />
-          </div>
-          <Button type="submit">Enviar mensaje</Button>
-        </form>
       </div>
     </div>
   );

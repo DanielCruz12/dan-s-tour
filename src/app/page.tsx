@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/carousel";
 import NewsletterSection from "@/components/newsletter";
 import { NoSearchResults } from "@/components/not-results-found";
+import UpTop from "@/components/up-top";
 
 export default function Home() {
   const { filters } = useFiltersStore();
@@ -90,6 +91,7 @@ export default function Home() {
   const plugin = useRef(Autoplay({ delay: 2200, stopOnInteraction: true }));
   return (
     <div className="min-h-screen">
+      <UpTop/>
       <SearchSection />
       <HeroSection />
       {filteredTours.length > 0 ? (

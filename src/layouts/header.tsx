@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
 import { MenuProfileSheet } from "./sidebar";
 
@@ -42,17 +41,17 @@ export function Header() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-           {/*  <div className="flex items-center gap-2">
+            {/*  <div className="flex items-center gap-2">
               <Globe className="w-4 h-4" />
               <span className="text-sm">EN</span>
             </div> */}
-            <div className="flex items-center gap-2">
+            {/*   <div className="flex items-center gap-2">
               <span className="text-sm">USD</span>
             </div>
-            <ModeToggle />
             <Button variant="outline" size="sm">
-              Sign in
-            </Button>
+            Sign in
+            </Button> */}
+            <ModeToggle />
 
             <MenuProfileSheet />
           </div>
