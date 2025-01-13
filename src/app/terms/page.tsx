@@ -2,7 +2,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function TermsAndConditionsPage() {
   return (
-    <div className="max-w-7xl mx-auto py-8">
+    <div className="max-w-7xl min-h-screen mx-auto px-4">
       <h1 className="text-3xl font-bold mb-6">Términos y Condiciones</h1>
       <ScrollArea className="h-[70vh] w-full rounded-md p-4">
         <div className="prose prose-sm">

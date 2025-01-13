@@ -38,7 +38,7 @@ const savedTours = [
 
 export default function ProfilePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="max-w-7xl min-h-screen mx-auto px-4">
       <main className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid gap-8">
           <div>

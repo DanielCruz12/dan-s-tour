@@ -52,10 +52,10 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="container max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-7xl min-h-screen mx-auto px-4">
       <div className="grid lg:grid-cols-2 gap-12">
         <div>
-          <h1 className="text-4xl font-bold mb-8">Get in Touch</h1>
+          <h2 className="text-xl font-semibold mb-4">Get in Touch</h2>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">

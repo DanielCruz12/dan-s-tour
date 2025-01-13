@@ -67,10 +67,10 @@ export default function PartnerOrInvestPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto py-8">
-      <h1 className="mx-2 text-4xl font-bold mb-8">
+    <div className="max-w-7xl min-h-screen mx-auto px-4">
+      <h2 className="text-xl font-semibold mb-4">
         Sé un Socio o Invierte en Nuestra Plataforma
-      </h1>
+      </h2>
 
       <Card className="mb-8">
         <CardHeader>
