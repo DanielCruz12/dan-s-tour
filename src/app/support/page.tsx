@@ -16,7 +16,7 @@ export default function HelpAndSupportPage() {
     {
       question: "¿Cómo puedo crear una cuenta?",
       answer:
-        "Para crear una cuenta, haz clic en el botón 'Registrarse' en la esquina superior derecha de la página principal. Sigue las instrucciones proporcionadas para completar el proceso de registro.",
+        "Para crear una cuenta, haz clic en el botón 'Registrarse' en la esquina superior derecha de la página principal. Sigue las instrucciones proporcionadas para completar el proceso de registro. Si necesitas ayuda adicional, por favor contacta a nuestro equipo de soporte.",
     },
     {
       question: "¿Cómo puedo restablecer mi contraseña?",
@@ -36,35 +36,33 @@ export default function HelpAndSupportPage() {
   ];
 
   return (
-    <div className="max-w-7xl min-h-screen mx-auto px-4">
-      <div className="pt-5">
-        <h2 className="text-xl font-semibold mb-4">Preguntas Frecuentes</h2>
-        <Input
-          type="search"
-          placeholder="Buscar en las FAQ..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="mb-4"
-        />
-        <Accordion
-          type="multiple"
-          defaultValue={["item-0", "item-1"]}
-          className="w-full"
-        >
-          {faqs
-            .filter(
-              (faq) =>
-                faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-            )
-            .map((faq, index) => (
-              <AccordionItem value={`item-${index}`} key={index}>
-                <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-        </Accordion>
-      </div>
+    <div className="max-w-7xl min-h-screen mx-auto px-4 pt-5">
+      <h2 className="text-xl font-semibold mb-4">Preguntas Frecuentes</h2>
+      <Input
+        type="search"
+        placeholder="Buscar en las FAQ..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="mb-4"
+      />
+      <Accordion
+        type="multiple"
+        defaultValue={["item-0", "item-1"]}
+        className="w-full"
+      >
+        {faqs
+          .filter(
+            (faq) =>
+              faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+          )
+          .map((faq, index) => (
+            <AccordionItem value={`item-${index}`} key={index}>
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+      </Accordion>
     </div>
   );
 }
