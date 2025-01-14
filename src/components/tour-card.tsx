@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { Heart, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -53,16 +53,18 @@ export function TourCard({
               alt={title}
               width={400}
               height={300}
-              className="w-full h-48 object-cover"
+              className="w-full h-36 md:h-52 object-cover"
             />
-           {/*  <button className="absolute right-4 top-4 rounded-full p-1 bg-transparent shadow-sm">
+             <button className="absolute right-4 top-4 rounded-full p-1 bg-transparent shadow-sm">
               <Heart className="h-4 w-4 " />
-            </button> */}
+            </button>
             <div className="absolute bottom-[-6px] left-4 flex items-center gap-2 rounded-full px-3 py-1.5 shadow-lg bg-white dark:bg-gray-200">
-              <span className="text-muted-foreground dark:text-gray-700">{category}</span>
+              <span className="text-muted-foreground dark:text-gray-700 ">
+                {category}
+              </span>
             </div>
           </div>
-          <CardContent className="pt-6">
+          <CardContent className="pt-3">
             <div className="flex items-center gap-2">
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -79,27 +81,27 @@ export function TourCard({
                 ({reviews} reviews)
               </span>
             </div>
-            <h3 className="text-xl font-bold">
+            <h3 className="text-lg md:text-xl font-bold pt-2">
               {title.length > 30 ? `${title.slice(0, 30)}...` : title}
             </h3>
-            <span className="font-normal text-muted-foreground">
+            <span className="font-normal text-sm md:text-base text-muted-foreground">
               {description.length > 80
                 ? `${description.slice(0, 80)}..`
                 : description}
             </span>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground font-bold">
               {duration} {Number(duration) > 1 ? "days" : "day"}
             </p>
           </CardContent>
-          <CardFooter className="flex items-center justify-between pt-0">
+          <CardFooter className="flex items-center justify-between">
             <div>
-              <span className="text-2xl font-bold">${price}</span>
+              <span className="text-lg md:text-2xl font-bold">${price}</span>
               <span className="text-sm text-muted-foreground">
                 / {groupSize}
               </span>
             </div>
             <Button
-              className="rounded-full px-6"
+              className="rounded-full px-5"
               variant={isHovered ? "default" : "secondary"}
             >
               Book Now
@@ -107,21 +109,6 @@ export function TourCard({
           </CardFooter>
         </Card>
       </motion.div>
-      {/*  <TourModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        tour={{
-          image,
-          title,
-          rating,
-          reviews,
-          duration,
-          groupSize,
-          price,
-          exceptional,
-          description,
-        }}
-      /> */}
     </Link>
   );
 }

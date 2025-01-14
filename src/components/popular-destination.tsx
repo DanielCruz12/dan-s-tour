@@ -99,14 +99,14 @@ export default function PopularDestinations() {
   });
 
   return (
-    <div className="container max-w-7xl mx-auto px-4 py-16">
+    <section className="max-w-7xl mx-auto py-12">
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold">Popular Destinations</h2>
-        <p className="text-xl text-muted-foreground">
+        <h2 className="text-xl md:text-4xl font-bold">Popular Destinations</h2>
+        <p className="text-base md:text-xl text-gray-600 dark:text-gray-400">
           Favorite destinations based on customer reviews
         </p>
 
-        <div className="flex flex-wrap gap-4 items-center justify-end">
+        <div className="flex flex-wrap gap-4 items-center justify-start">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline">Categories</Button>
@@ -178,7 +178,7 @@ export default function PopularDestinations() {
               key={destination.id}
               className="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="relative h-48">
+              <div className="relative h-20 md:h-24">
                 <Image
                   src={destination.image}
                   alt={destination.name}
@@ -188,10 +188,14 @@ export default function PopularDestinations() {
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-semibold">{destination.name}</h3>
-                  <p className="text-muted-foreground mt-2">
-                    ${destination.priceRange}
-                  </p>
+                  <div className="flex items-center">
+                    <h3 className="text-2xl font-semibold mr-2">
+                      {destination.name}
+                    </h3>
+                    <p className="text-muted-foreground text-sm md:text-base ml-2">
+                      ${destination.priceRange}
+                    </p>
+                  </div>
                   <ChevronRight className="h-6 w-6 text-gray-400" />
                 </div>
                 <p className="text-muted-foreground mt-2">
@@ -202,6 +206,6 @@ export default function PopularDestinations() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

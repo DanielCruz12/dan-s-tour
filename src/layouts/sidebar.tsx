@@ -4,6 +4,7 @@ import { useState } from "react";
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -17,7 +18,6 @@ import {
   User,
   BookOpen,
   Handshake,
-  Bookmark,
   Facebook,
   Twitter,
   Instagram,
@@ -36,7 +36,6 @@ export function MenuProfileSheet() {
 
   const menuItems = [
     { label: "Perfil", icon: User, href: "/profile" },
-    { label: "Guardados", icon: Bookmark, href: "/" },
     { label: "Invest in us", icon: Handshake, href: "/investment" },
     { label: "Términos y Condiciones", icon: BookOpen, href: "/terms" },
     { label: "Ayuda y Soporte", icon: HelpCircle, href: "/support" },
@@ -60,6 +59,7 @@ export function MenuProfileSheet() {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Menú</SheetTitle>
+          <SheetDescription></SheetDescription>
         </SheetHeader>
         <ScrollArea className="h-[calc(100vh-8rem)] pr-4">
           <div className="mt-6 flex flex-col space-y-4">
@@ -88,7 +88,6 @@ export function MenuProfileSheet() {
                 </Button>
               </Link>
             ))}
-            <Separator />
             <div className="flex justify-around py-2">
               {socialIcons.map((social) => (
                 <Button
