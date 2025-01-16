@@ -32,7 +32,7 @@ export function TrendingPost({
   image,
 }: TrendingPostProps) {
   return (
-    <Link href="#" className="flex items-center gap-4 group">
+    <Link href="/blog/1" className="flex items-center gap-4 group">
       <div className="relative w-20 h-20 overflow-hidden rounded-lg shrink-0">
         <Image
           src={image || "/placeholder.svg"}

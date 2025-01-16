@@ -16,7 +16,7 @@ export default function BlogPost({ params }: { params: { id: string } }) {
         <div className="max-w-4xl mx-auto">
           <div className="mb-8 text-center">
             <Badge className="mb-4">{blog.category}</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <h1 className="text-2xl md:text-5xl font-bold tracking-tight mb-6">
               {blog.title}
             </h1>
             <div className="flex items-center justify-center gap-6 text-muted-foreground">

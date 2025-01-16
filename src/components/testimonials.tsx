@@ -115,7 +115,7 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
 
-                <p className="dark:text-gray-200 mb-6">{testimonial.text}</p>
+                <p className="dark:text-gray-200 mb-6 text-wrap line-clamp-3 md:line-clamp-5">{testimonial.text}</p>
 
                 <div className="flex items-center gap-3">
                   <Image

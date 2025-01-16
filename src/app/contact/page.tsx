@@ -52,7 +52,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="container min-h-screen mx-auto px-4 pt-5">
+    <div className="max-w-7xl min-h-screen mx-auto px-4 py-12">
       <div className="grid lg:grid-cols-2 gap-12">
         <div>
           <h2 className="text-xl font-semibold mb-4">Get in Touch</h2>

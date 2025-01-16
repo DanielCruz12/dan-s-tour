@@ -45,7 +45,7 @@ export default function TourBooking() {
   };
 
   return (
-    <div className="container mx-auto p-4 md:p-6 min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 py-12 ">
       <div className="flex items-center gap-2 mb-2 text-sm">
         <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
         <span className="font-medium">4.96</span>

@@ -81,15 +81,13 @@ export function TourCard({
                 ({reviews} reviews)
               </span>
             </div>
-            <h3 className="text-lg md:text-xl font-bold pt-2">
-              {title.length > 30 ? `${title.slice(0, 30)}...` : title}
+            <h3 className="text-lg md:text-xl font-bold pt-2 text-wrap line-clamp-1">
+              {title}
             </h3>
-            <span className="font-normal text-sm md:text-base text-muted-foreground">
-              {description.length > 70
-                ? `${description.slice(0, 70)}..`
-                : description}
+            <span className="font-normal text-sm md:text-base pt-1 text-muted-foreground text-wrap line-clamp-2 ">
+              {description}
             </span>
-            <p className="text-muted-foreground font-bold">
+            <p className="font-bold">
               {duration} {Number(duration) > 1 ? "days" : "day"}
             </p>
           </CardContent>
