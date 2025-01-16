@@ -87,7 +87,7 @@ export default function TourSection() {
   return (
     <section>
       {filteredTours.length > 0 ? (
-        <section className="max-w-7xl mx-auto">
+        <div>
           <Carousel
             plugins={[plugin.current]}
             className="w-full"
@@ -109,7 +109,7 @@ export default function TourSection() {
             <CarouselPrevious className="hidden md:flex" />
             <CarouselNext className="hidden md:flex" />
           </Carousel>
-        </section>
+        </div>
       ) : (
         <NoSearchResults />
       )}

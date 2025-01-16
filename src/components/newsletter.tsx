@@ -23,7 +23,7 @@ export default function NewsletterSection() {
   return (
     <section className="relative overflow-hidden bg-black py-16 sm:py-24">
       <div className="absolute inset-0 bg-[url('/futuristic-grid.svg')] bg-center bg-repeat [mask-image:radial-gradient(ellipse_at_center,white,transparent)]"></div>
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto container px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Stay Updated with Our Newsletter

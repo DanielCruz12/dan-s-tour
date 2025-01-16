@@ -3,7 +3,7 @@ import Image from "next/image";
 //! MOSTRAR TODOS LOS TOURS
 export default function Packages() {
   return (
-    <div className="max-w-7xl min-h-screen mx-auto px-4 pt-5">
+    <div className="container min-h-screen mx-auto px-4 pt-5">
       <h1 className="text-xl font-semibold mb-4">Our Travel Packages</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {packages.map((pkg) => (

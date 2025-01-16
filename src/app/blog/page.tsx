@@ -85,7 +85,7 @@ export default function RecentPosts() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className=" bg-gray-50">
       <div className="container px-4 py-12 mx-auto">
         <div className="grid gap-8 lg:grid-cols-[1fr,380px]">
           <div>
@@ -113,7 +113,7 @@ export default function RecentPosts() {
                 <Search className="absolute w-4 h-4 transform -translate-y-1/2 left-3 top-1/2 text-muted-foreground" />
               </div>
 
-              <div className="p-6 bg-white rounded-xl">
+              <div className="p-6 bg-white rounded-xl sticky max-w-">
                 <h2 className="mb-6 text-xl font-semibold">Trending Now</h2>
                 <div className="grid gap-6">
                   {trendingPosts.map((post, index) => (

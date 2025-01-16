@@ -83,7 +83,7 @@ export default function ImageCollage() {
         </Carousel>
       </div>
 
-      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 container mx-auto">
         {images.map((image, index) => (
           <div
             onClick={() => {

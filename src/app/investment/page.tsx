@@ -42,7 +42,7 @@ export default function PartnerOrInvestPage() {
   ];
 
   return (
-    <div className="max-w-7xl min-h-screen mx-auto px-4 pt-5 text-sm">
+    <div className="container min-h-screen mx-auto px-4 pt-5 text-sm">
       <h2 className="text-xl font-semibold mb-4">
         Sé un Socio o Invierte en Nuestra Plataforma
       </h2>

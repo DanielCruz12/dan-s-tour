@@ -19,7 +19,7 @@ export default function SearchSection() {
     useFiltersStore();
 
   return (
-    <div className="max-w-7xl mx-auto py-6">
+    <section className="py-6">
       <ResultDialog isOpen={isDialogOpen} onClose={setIsDialogOpen} />
       <div>
         <div className="flex gap-2 overflow-x-auto pb-3">
@@ -70,6 +70,6 @@ export default function SearchSection() {
           </Select>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -52,7 +52,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="max-w-7xl min-h-screen mx-auto px-4">
+    <div className="container min-h-screen mx-auto px-4 pt-5">
       <div className="grid lg:grid-cols-2 gap-12">
         <div>
           <h2 className="text-xl font-semibold mb-4">Get in Touch</h2>
@@ -152,7 +152,7 @@ export default function ContactForm() {
                     <FormControl>
                       <Textarea
                         placeholder="Leave us a message..."
-                        className="min-h-[90px]"
+                        className="min-h-[150px]"
                         {...field}
                       />
                     </FormControl>

@@ -38,7 +38,7 @@ export default function TermsAndConditionsPage() {
   ];
 
   return (
-    <div className="max-w-7xl min-h-screen mx-auto px-4 pt-4">
+    <div className="container min-h-screen mx-auto px-4 pt-4">
       <h2 className="text-xl font-semibold mb-5">Términos y Condiciones</h2>
       <div className="prose prose-sm">
         {terms.map((term, index) => (

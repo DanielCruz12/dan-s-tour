@@ -56,7 +56,7 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="max-w-7xl mx-auto py-6">
+    <section className="py-6">
       <div className="mb-8">
         <div className="inline-flex items-center gap-1 dark:bg-gray-800 rounded-full py-2 mb-6">
           <div className="flex -space-x-2">

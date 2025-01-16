@@ -99,7 +99,7 @@ export default function PopularDestinations() {
   });
 
   return (
-    <section className="max-w-7xl mx-auto py-12">
+    <section className="py-12">
       <div className="space-y-4">
         <h2 className="text-xl md:text-4xl font-bold">Popular Destinations</h2>
         <p className="text-base md:text-xl text-gray-600 dark:text-gray-400">
