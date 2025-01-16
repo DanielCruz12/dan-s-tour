@@ -22,8 +22,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`min-h-screen ${inter.className}`}>
-      <ClerkProvider
+      <body className={`${inter.className}`}>
+        <ClerkProvider
           afterSignOutUrl={"/"}
           appearance={{
             baseTheme: dark,
@@ -33,16 +33,16 @@ export default function RootLayout({
             },
           }}
         >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          {children}
-          <Footer />
-        </ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            {children}
+            <Footer />
+          </ThemeProvider>
         </ClerkProvider>
       </body>
     </html>

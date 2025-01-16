@@ -90,7 +90,7 @@ export default function TourSection() {
         <section className="max-w-7xl mx-auto">
           <Carousel
             plugins={[plugin.current]}
-            className="w-full max-w-7xl mx-auto"
+            className="w-full"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
@@ -98,7 +98,7 @@ export default function TourSection() {
               {filteredTours.map((tour, index) => (
                 <CarouselItem
                   key={index}
-                  className="md:basis-1/2 lg:basis-1/3 pl-4"
+                  className="md:basis-1/2 lg:basis-1/3 pl-4 p-4"
                 >
                   <div className="p-1">
                     <TourCard {...tour} />

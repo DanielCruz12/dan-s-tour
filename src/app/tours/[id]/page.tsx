@@ -28,7 +28,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
 import ImageCollage from "@/components/image-collage";
 
 export default function TourBooking() {
@@ -46,20 +45,20 @@ export default function TourBooking() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-4 md:p-6">
-      <div className="flex items-center gap-2 mb-2">
+    <div className="max-w-7xl mx-auto p-4 md:p-6 min-h-screen">
+      <div className="flex items-center gap-2 mb-2 text-sm">
         <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
         <span className="font-medium">4.96</span>
         <span className="text-muted-foreground">(672 reviews)</span>
       </div>
-      <h1 className="text-xl md:text-3xl font-bold">
+      <h1 className="text-xl md:text-3xl font-semibold">
         The High Roller Experience: Tickets for The LINQ Observation Wheel, Las
         Vegas Strip
       </h1>
       <ImageCollage />
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Tour Details Section */}
-        <div className="lg:col-span-2 space-y-6 pr-6">
+        <div className="lg:col-span-2 space-y-6 md:pr-6 px-2">
           <div>
             <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
               <div className="flex items-center gap-1">
@@ -81,23 +80,23 @@ export default function TourBooking() {
               <div className="flex items-center gap-2  rounded-lg">
                 <Calendar className="w-5 h-5 text-primary rounded-xl" />
                 <div>
-                  <div className="text-sm font-medium">Duration</div>
-                  <div className="text-sm text-muted-foreground">5-7 days</div>
+                  <div className="text-xs sm:text-sm md:text-base font-medium">Duration</div>
+                  <div className="text-xs sm:text-sm md:text-base text-muted-foreground">5-7 days</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-2 ">
                 <Users className="w-5 h-5 text-primary" />
                 <div>
-                  <div className="text-sm font-medium">Group Size</div>
-                  <div className="text-sm text-muted-foreground">06 people</div>
+                  <div className="text-xs sm:text-sm md:text-base font-medium">Group Size</div>
+                  <div className="text-xs sm:text-sm md:text-base text-muted-foreground">06 people</div>
                 </div>
               </div>
               <div className="flex items-center gap-2 ">
                 <Clock className="w-5 h-5 text-primary" />
                 <div>
-                  <div className="text-sm font-medium">Tour Type</div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-xs sm:text-sm md:text-base font-medium">Tour Type</div>
+                  <div className="text-xs sm:text-sm md:text-base text-muted-foreground">
                     Daily Tour
                   </div>
                 </div>
@@ -105,8 +104,8 @@ export default function TourBooking() {
               <div className="flex items-center gap-2">
                 <Globe className="w-5 h-5 text-primary" />
                 <div>
-                  <div className="text-sm font-medium">Languages</div>
-                  <div className="text-sm text-muted-foreground">English</div>
+                  <div className="text-xs sm:text-sm md:text-base font-medium">Language</div>
+                  <div className="text-xs sm:text-sm md:text-base text-muted-foreground">English</div>
                 </div>
               </div>
             </div>
@@ -114,15 +113,15 @@ export default function TourBooking() {
 
           <Accordion
             type="multiple"
-            defaultValue={["overview", "highlight"]}
+            defaultValue={["overview"]}
             className="space-y-4"
           >
             <AccordionItem value="overview">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-base md:text-xl font-semibold">
                 Overview
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-4 text-muted-foreground">
+                <div className="space-y-4 font-normal text-xs sm:text-sm md:text-base text-muted-foreground">
                   <p>
                     Elevate your Las Vegas experience to new heights with a
                     journey aboard The High Roller at The LINQ. As the tallest
@@ -147,11 +146,11 @@ export default function TourBooking() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="highlight">
-              <AccordionTrigger className="text-xl font-semibold">
+              <AccordionTrigger className="text-base md:text-xl font-semibold">
                 Highlight
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-4 text-muted-foreground">
+                <div className="space-y-4 font-normal text-xs sm:text-sm md:text-base text-muted-foreground">
                   <p>
                     Ascend to the skies aboard the worlds tallest observation
                     wheel and marvel at the panoramic vistas stretching as far

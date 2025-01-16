@@ -85,8 +85,8 @@ export function TourCard({
               {title.length > 30 ? `${title.slice(0, 30)}...` : title}
             </h3>
             <span className="font-normal text-sm md:text-base text-muted-foreground">
-              {description.length > 80
-                ? `${description.slice(0, 80)}..`
+              {description.length > 70
+                ? `${description.slice(0, 70)}..`
                 : description}
             </span>
             <p className="text-muted-foreground font-bold">

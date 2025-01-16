@@ -5,7 +5,7 @@ import { MenuProfileSheet } from "./sidebar";
 export function Header() {
   return (
     <header className="w-full">
-      <div className=" py-2 px-4 flex justify-center items-center">
+      <div className=" py-3 px-4 flex justify-center items-center">
         <p className="text-xs lg:text-sm">
           Unlock the Magic of Travel with Dan&apos;s Tours, Now →
         </p>

@@ -1,12 +1,20 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Download from "yet-another-react-lightbox/plugins/download";
+import Autoplay from "embla-carousel-autoplay";
 import Share from "yet-another-react-lightbox/plugins/share";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const images = [
   {
@@ -37,12 +45,45 @@ const images = [
 ];
 
 export default function ImageCollage() {
+  const plugin = useRef(Autoplay({ delay: 1500, stopOnInteraction: true }));
+
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <section className=" mx-auto py-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
+      <div className="md:hidden mb-4">
+        <Carousel
+          plugins={[plugin.current]}
+          className="w-full"
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+        >
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index}>
+                <div className="relative aspect-[16/9]">
+                  <Image
+                    src={image.src || "/placeholder.svg"}
+                    alt={image.alt}
+                    fill
+                    className="object-cover rounded-lg"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={index < 2}
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-20 flex items-end">
+                    <p className="text-white p-4 font-semibold">{image.alt}</p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
+
+      <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
         {images.map((image, index) => (
           <div
             onClick={() => {
@@ -53,7 +94,7 @@ export default function ImageCollage() {
             className={`relative overflow-hidden rounded-lg shadow-lg hover:cursor-pointer ${image.className}`}
           >
             <Image
-              src={image.src}
+              src={image.src || "/placeholder.svg"}
               alt={image.alt}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -66,6 +107,7 @@ export default function ImageCollage() {
           </div>
         ))}
       </div>
+
       {open && (
         <>
           <Lightbox
